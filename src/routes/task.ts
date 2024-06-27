@@ -4,8 +4,10 @@ import { PrismaClient }  from '@prisma/client'
 const prisma = new PrismaClient();
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    res.send('Página de tarefas');
+router.get('/', async (req, res) => {
+    const tasks = await prisma.task.findMany();
+
+    res.status(200).json(tasks);
 });
 
 router.get('/:id', (req, res) => {
