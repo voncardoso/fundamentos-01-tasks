@@ -19,7 +19,7 @@ model Task {
   id        Int     @id @default(autoincrement())
   title     String
   description String
-  completed_at String?
+  completed_at Boolean?
   created_at  DateTime @default(now())
   updated_at DateTime?
 }
