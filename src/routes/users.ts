@@ -19,7 +19,6 @@ router.post('/', async (req, res) => {
         });
         res.status(201).json(newUser);
     } catch (error) {
-        console.error(error);
         res.status(500).send('Erro ao criar usuário');
     }
 });

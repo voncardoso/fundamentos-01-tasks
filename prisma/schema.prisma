@@ -15,4 +15,13 @@ model User {
   name     String?
 }
 
+model Task {
+  id        Int     @id @default(autoincrement())
+  title     String
+  description String
+  completed_at String?
+  created_at  DateTime @default(now())
+  updated_at DateTime?
+}
+
 
